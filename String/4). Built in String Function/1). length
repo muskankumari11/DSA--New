@@ -1,0 +1,7 @@
+#include<iostream>
+using namespace std;
+int main(){
+    string str="ram is good insaan";
+    cout<<str.length();
+    int len=str.length();
+}
