@@ -1,0 +1,9 @@
+// ques 2. updation of a single character in string
+#include<iostream>
+using namespace std;
+int main(){
+    string str="shyam";
+   cout<<str<<endl;
+   str[1]='n';
+   cout<<str<<endl;
+}
