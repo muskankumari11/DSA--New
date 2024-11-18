@@ -1,0 +1,15 @@
+// input a string of size n and update all the even positions in the string to character 'a' consider 0-based indexing
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    string str="rama";
+    n=str.size();
+    for(int i=0;i<n;i++){
+    if(i%2==0){
+        str[i]='p';
+    }
+    }
+    cout<<str<<endl;
+}
