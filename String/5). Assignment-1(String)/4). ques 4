@@ -1,0 +1,27 @@
+// input a string of even length and reverse the second half of the string. input: str="abcdefgh"
+#include <iostream>
+#include <string>
+#include <algorithm> // For reverse function
+using namespace std;
+
+int main() {
+    string s;
+    cin >> s;
+
+    int n = s.length();
+
+    if (n == 0) { 
+        cout << "Empty string!" << endl;
+        return 0;
+    }
+
+    if (n % 2 != 0) { 
+        cout << "not even" << endl;
+        return 0; 
+    }
+
+    reverse(s.begin() + n / 2, s.end());  
+    cout << s << endl;
+
+    return 0;
+}
