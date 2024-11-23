@@ -1,0 +1,22 @@
+//input a string of length less than 10 and convert it into integer without using built in function. input:"12" output: 12
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string s;
+    cin >> s;
+
+    int val = 0; // Stores the final integer value
+    int pw = 1;  // Tracks the place value (units, tens, etc.)
+
+    while (s.size() > 0) { 
+        val += pw * (s.back() - '0'); // Convert the last character to a digit
+        s.pop_back();                // Remove the last character from the string
+        pw *= 10;                    // Update the place value
+    }
+
+    cout << val; 
+    return 0;
+}
