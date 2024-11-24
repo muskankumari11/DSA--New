@@ -10,3 +10,5 @@ int main() {
     cout << s; 
     return 0;
 }
+
+//here used getline(cin, s) in place of of cin>>s because it captures spaces also . in this space is character .
