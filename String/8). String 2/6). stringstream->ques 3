@@ -1,3 +1,4 @@
+//ques -> given a sentence , split every single word of the sentence and print in a new line
 #include<iostream>
 #include<vector>
 #include<string>
