@@ -1,0 +1,60 @@
+//given n strings consisting of lowercase english alphabets. print the character that is occuring most number of times.
+#include<iostream>
+#include<string>
+#include<algorithm>
+#include<vector>
+using namespace std;
+int main(){
+    // string s="physicswallah";
+    // int max=0;
+    // for(int i=0;i<s.length();i++){
+    //     char ch=s[i];
+    //     int cnt=1;
+    //     for(int j=i+1;j<s.length();j++){
+    //         if(s[j]==s[i])
+    //         cnt++;
+    //     }
+    //     if(max<cnt)
+    //     max=cnt;
+    // }
+    // for(int i=0;i<s.length();i++){
+    //     char ch=s[i];
+    //     int cnt=1;
+    //     for(int j=i+1;j<s.length();j++){
+    //         if(s[j]==s[i])
+    //         cnt++;
+    //     }
+    //     if(cnt==max){
+    //         cout<<ch<<""<<max<<endl;
+    //     }
+    // }
+    
+    //using special array
+     string s = "leetcode";
+    vector<int> arr(26, 0); 
+
+    // Count frequencies
+    for (int i = 0; i < s.length(); i++) {
+        char ch = s[i];
+        int ascii = (int)ch;
+        arr[ascii - 97]++;
+    }
+
+    // Find the maximum frequency
+    int mx = 0;
+    for (int i = 0; i < 26; i++) { // Fixed `i,26` to `i < 26`
+        if (arr[i] > mx)
+            mx = arr[i];
+    }
+
+    // Find and print the character(s) with the maximum frequency
+    for (int i = 0; i < 26; i++) {
+        if (arr[i] == mx) {
+            int ascii = i + 97;
+            char ch = (char)ascii;
+            cout << ch << " " << mx << endl;
+        }
+    }
+
+    return 0;
+}
