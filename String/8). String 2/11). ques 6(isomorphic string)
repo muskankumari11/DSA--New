@@ -1,0 +1,34 @@
+class Solution {
+public:
+    bool isIsomorphic(string s, string t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+
+        vector<int> v(150, 1000); 
+        for (int i = 0; i < s.length(); i++) {
+            int idx = (int)s[i]; // Get the ASCII value as the index
+            if (v[idx] == 1000) {
+                v[idx] = s[i] - t[i]; // Store the difference between characters
+            } else if (v[idx] != s[i] - t[i]) {
+                return false; // Return false if mapping doesn't match
+            }
+        }
+
+        // Resetting the vector to reuse it for reverse mapping
+        for (int i = 0; i < 150; i++) {
+            v[i] = 1000;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            int idx = (int)t[i]; // Reverse mapping for t to s
+            if (v[idx] == 1000) {
+                v[idx] = t[i] - s[i]; // Store the reverse difference
+            } else if (v[idx] != t[i] - s[i]) {
+                return false; // Return false if reverse mapping doesn't match
+            }
+        }
+
+        return true; 
+    }
+};
