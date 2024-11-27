@@ -1,0 +1,38 @@
+//given an array of strings. check whether they are anagram or not
+//input: s="car", t="arc"
+//output:True
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the number of strings: ";
+    cin >> n;
+
+    vector<string> strings(n);
+    cout << "Enter the strings:\n";
+    for (int i = 0; i < n; i++) {
+        cin >> strings[i];
+    }
+
+    for (int i = 0; i < n; i++) {
+        sort(strings[i].begin(), strings[i].end());
+    }
+
+    bool areAnagrams = true;
+    for (int i = 1; i < n; i++) {
+        if (strings[i] != strings[0]) {
+            areAnagrams = false;
+            break;
+        }
+    }
+
+    if (areAnagrams) {
+        cout << "YES (All strings are anagrams)\n";
+    } else {
+        cout << "NO (Strings are not anagrams)\n";
+    }
+
+    return 0;
+}
